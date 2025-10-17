@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <header class="header">
+      <div class="welcome-text">
+        <p>Welcome back,</p>
+        <h2>Rajo Alfonso</h2>
+      </div>
+      <img src="profile.jpg" alt="User" class="user-photo" />
+    </header>
+
+    <section class="emergency-section">
+      <button class="emergency-button" id="emergencyButton">
+        <img src="emergency.png" alt="Emergency Icon" />
+      </button>
+      <p class="emergency-text">Tap in case of emergency</p>
+      <button class="drill-button">Emergency Drill</button>
+    </section>
+
+    <div class="options">
+      <div class="option"><img src="alert-icon.png" alt="">Disaster Alert</div>
+      <div class="option"><img src="advisory-icon.png" alt="">Emergency Advisory</div>
+      <div class="option"><img src="hotline-icon.png" alt="">Hotline & Assistance</div>
+      <div class="option"><img src="education-icon.png" alt="">Educational Tips</div>
+    </div>
+
+    <!-- Logout button moved here -->
+    <button class="logout-button" id="logoutButton">Logout</button>
+  </div>
+
+  <div id="notification" class="notification">🚨 Emergency Activated!</div>
+
+  <script>
+    const emergencyButton = document.getElementById("emergencyButton");
+    const notification = document.getElementById("notification");
+
+    emergencyButton.addEventListener("click", () => {
+      emergencyButton.classList.add("active");
+      notification.classList.add("show");
+
+      setTimeout(() => {
+        emergencyButton.classList.remove("active");
+        notification.classList.remove("show");
+      }, 2000);
+    });
+
+    const logoutButton = document.getElementById("logoutButton");
+    logoutButton.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
