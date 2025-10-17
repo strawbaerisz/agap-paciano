@@ -8,36 +8,115 @@
 </head>
 <body>
   <div class="dashboard-container">
+    <!-- Header Section -->
     <header class="header">
       <div class="welcome-text">
         <p>Welcome back,</p>
         <h2>Rajo Alfonso</h2>
       </div>
+
       <img src="profile.jpg" alt="User" class="user-photo" />
+
+      <button class="logout-icon" id="logoutButton">
+        <img src="logout-icon.png" alt="Logout" />
+      </button>
     </header>
 
-    <section class="emergency-section">
-      <button class="emergency-button" id="emergencyButton">
-        <img src="emergency.png" alt="Emergency Icon" />
-      </button>
-      <p class="emergency-text">Tap in case of emergency</p>
-      <button class="drill-button">Emergency Drill</button>
-    </section>
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <ul>
+        <li class="tab active" data-tab="home">Home</li>
+        <li class="tab" data-tab="advisory">Advisory</li>
+        <li class="tab" data-tab="map">Map</li>
+        <li class="tab" data-tab="tips">Tips</li>
+      </ul>
+      <div class="tab-indicator"></div>
+    </nav>
 
-    <div class="options">
-      <div class="option"><img src="alert-icon.png" alt="">Disaster Alert</div>
-      <div class="option"><img src="advisory-icon.png" alt="">Emergency Advisory</div>
-      <div class="option"><img src="hotline-icon.png" alt="">Hotline & Assistance</div>
-      <div class="option"><img src="education-icon.png" alt="">Educational Tips</div>
-    </div>
+    <!-- Main Content Area -->
+    <main>
+      <!-- HOME SECTION -->
+      <section id="home" class="tab-content active">
+        <div class="emergency-section">
+          <button class="emergency-button" id="emergencyButton">
+            <img src="emergency.png" alt="Emergency Icon" />
+          </button>
+          <p class="emergency-text">Tap in case of emergency</p>
+          <button class="drill-button">Emergency Drill</button>
+        </div>
 
-    <!-- Logout button moved here -->
-    <button class="logout-button" id="logoutButton">Logout</button>
+        <div class="latest-advisories">
+          <h3>LATEST ADVISORIES</h3>
+          <div id="advisory-placeholder"></div>
+        </div>
+      </section>
+
+      <!-- ADVISORY SECTION -->
+      <section id="advisory" class="tab-content">
+        <h3>Advisory Updates</h3>
+        <div class="advisory-list">
+          <div class="advisory-item">
+            <img src="alert-icon.png" alt="Alert Icon" />
+            <div>
+              <h4>Loren Ipsum</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="advisory-item">
+            <img src="alert-icon.png" alt="Alert Icon" />
+            <div>
+              <h4>Loren Ipsum</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="advisory-item">
+            <img src="alert-icon.png" alt="Alert Icon" />
+            <div>
+              <h4>Loren Ipsum</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP SECTION -->
+      <section id="map" class="tab-content">
+        <h3>Emergency Map</h3>
+        <p>Map view coming soon...</p>
+      </section>
+
+      <!-- TIPS SECTION -->
+      <section id="tips" class="tab-content">
+        <h3>Safety Tips</h3>
+        <p>Placeholder for educational and safety tips.</p>
+      </section>
+    </main>
   </div>
 
+  <!-- Notification -->
   <div id="notification" class="notification">🚨 Emergency Activated!</div>
 
   <script>
+    // Tab switching logic
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const indicator = document.querySelector('.tab-indicator');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => t.classList.remove('active'));
+        tabContents.forEach((c) => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+
+        // Move underline indicator
+        indicator.style.left = tab.offsetLeft + 'px';
+        indicator.style.width = tab.offsetWidth + 'px';
+      });
+    });
+
+    // Emergency button logic
     const emergencyButton = document.getElementById("emergencyButton");
     const notification = document.getElementById("notification");
 
@@ -51,9 +130,17 @@
       }, 2000);
     });
 
+    // Logout button
     const logoutButton = document.getElementById("logoutButton");
     logoutButton.addEventListener("click", () => {
       window.location.href = "index.html";
+    });
+
+    // Populate latest advisories from Advisory section
+    const advisoryPlaceholder = document.getElementById("advisory-placeholder");
+    const advisoryItems = document.querySelectorAll(".advisory-item");
+    advisoryItems.forEach(item => {
+      advisoryPlaceholder.appendChild(item.cloneNode(true));
     });
   </script>
 </body>
