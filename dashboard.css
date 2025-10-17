@@ -1,0 +1,167 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f9fb;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.dashboard-container {
+  max-width: 400px;
+  margin: auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.header {
+  background: url(header.png);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.header-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logout-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+}
+
+.welcome-text p {
+  margin: 0;
+  font-size: 14px;
+}
+.welcome-text h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.user-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.emergency-section {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.emergency-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.1s ease;
+}
+
+.emergency-button img {
+  width: 130%;
+  height: 130%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.emergency-button:active {
+  transform: scale(0.95);
+}
+
+.emergency-text {
+  color: #555;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.drill-button {
+  background-color: #dce7e5;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.drill-button:hover {
+  background-color: #c4d9d5;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 25px;
+}
+
+.option {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.option img {
+  width: 30px;
+  height: 30px;
+}
+.option:hover{
+  background-color: #cad2ce;
+}
+
+
+.notification {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4b4b;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.notification.show {
+  bottom: 30px;
+  opacity: 1;
+}
