@@ -16,7 +16,7 @@ body {
   padding: 20px;
 }
 
-/* 🔷 HEADER */
+/* header */
 .header {
   position: relative;
   background:url(header.png) no-repeat center center;
@@ -41,7 +41,7 @@ body {
   font-weight: 600;
 }
 
-/* 👤 USER PHOTO */
+/* user */
 .user-photo {
   position: absolute;
   top: 50%;
@@ -54,7 +54,7 @@ body {
   object-fit: cover;
 }
 
-/* logout things */
+/* logout */
 .logout-icon {
   position: absolute;
   top: 15px;
@@ -79,7 +79,7 @@ body {
   opacity: 0.8;
 }
 
-/* nav tabs */
+/* nav */
 .nav-tabs {
   position: relative;
   margin-top: 10px;
@@ -125,7 +125,7 @@ body {
   left: 0;
 }
 
-/* content sect */
+/* CONTENT SECTIONS */
 .tab-content {
   display: none;
 }
@@ -133,7 +133,7 @@ body {
   display: block;
 }
 
-/*emergency*/
+/* emergency sect */
 .emergency-section {
   margin-top: 25px;
   display: flex;
@@ -189,7 +189,7 @@ body {
   background-color: #c4d9d5;
 }
 
-/*Advisories*/
+/* advisories */
 .latest-advisories {
   margin-top: 30px;
   text-align: left;
@@ -236,7 +236,7 @@ body {
   color: #666;
 }
 
-/*Pop up*/
+/* notif */
 .notification {
   position: fixed;
   bottom: -60px;
